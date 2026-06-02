@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface Story {
   name: string;
@@ -14,11 +14,24 @@ export default function Home() {
   const [charCount, setCharCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     story: '',
   });
+
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   const handleStoryChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
@@ -80,7 +93,18 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
+      <audio ref={audioRef} loop>
+        <source src="/Ben E. King - Stand By Me (Audio) - Soulful Sounds (youtube).mp3.mpeg" type="audio/mpeg" />
+      </audio>
+
+      <button
+        onClick={toggleAudio}
+        className="fixed bottom-8 right-8 z-50 w-16 h-16 rounded-full bg-pink-500 hover:bg-pink-600 text-white shadow-lg flex items-center justify-center text-2xl transition-all hover:scale-110"
+        title={isPlaying ? 'Pausar música' : 'Tocar música'}
+      >
+        {isPlaying ? '🔊' : '🔇'}
+      </button>
       {/* HERO SECTION */}
       <section className="relative bg-gradient-to-br from-pink-500 to-pink-700 text-white py-20 md:py-32 px-4 min-h-screen flex flex-col justify-center items-center overflow-hidden">
         {/* LOGO */}
@@ -105,10 +129,7 @@ export default function Home() {
           <div className="text-8xl md:text-9xl mb-8 inline-block animate-float">💌</div>
           <h1 className="text-4xl md:text-5xl font-light mb-6 tracking-wide">Como tudo começou?</h1>
           <p className="text-xl md:text-2xl font-light mb-3">Toda história de amor tem um início especial.</p>
-          <p className="text-xl md:text-2xl font-light mb-8">Compartilhe a sua!</p>
-          <audio autoPlay loop>
-            <source src="/Ben E. King - Stand By Me (Audio) - Soulful Sounds (youtube).mp3.mpeg" type="audio/mpeg" />
-          </audio>
+          <p className="text-xl md:text-2xl font-light mb-3">Compartilhe a sua!</p>
         </div>
       </section>
 
