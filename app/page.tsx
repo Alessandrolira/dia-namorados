@@ -105,7 +105,10 @@ export default function Home() {
           <div className="text-8xl md:text-9xl mb-8 inline-block animate-float">💌</div>
           <h1 className="text-4xl md:text-5xl font-light mb-6 tracking-wide">Como tudo começou?</h1>
           <p className="text-xl md:text-2xl font-light mb-3">Toda história de amor tem um início especial.</p>
-          <p className="text-xl md:text-2xl font-light">Compartilhe a sua!</p>
+          <p className="text-xl md:text-2xl font-light mb-8">Compartilhe a sua!</p>
+          <audio autoPlay loop>
+            <source src="/Ben E. King - Stand By Me (Audio) - Soulful Sounds (youtube).mp3.mpeg" type="audio/mpeg" />
+          </audio>
         </div>
       </section>
 
