@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Dia dos Namorados ❤️",
   description: "Celebre o amor e a paixão",
   icons: {
-    icon: "/dia-dos-namorados.png",
+    icon: "/vercel.svg",
   },
 };
 
