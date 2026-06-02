@@ -24,3 +24,80 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-hearts .heart:nth-child(1) {
+  left: 10%;
+  animation: float-up 7s ease-in infinite;
+}
+
+.floating-hearts .heart:nth-child(2) {
+  left: 20%;
+  animation: float-up 6s ease-in infinite 1s;
+}
+
+.floating-hearts .heart:nth-child(3) {
+  left: 30%;
+  animation: float-up 8s ease-in infinite 2s;
+}
+
+.floating-hearts .heart:nth-child(4) {
+  left: 40%;
+  animation: float-up 7s ease-in infinite 0.5s;
+}
+
+.floating-hearts .heart:nth-child(5) {
+  left: 50%;
+  animation: float-up 6.5s ease-in infinite 1.5s;
+}
+
+.floating-hearts .heart:nth-child(6) {
+  left: 60%;
+  animation: float-up 7.5s ease-in infinite 2.5s;
+}
+
+.floating-hearts .heart:nth-child(7) {
+  left: 70%;
+  animation: float-up 6.8s ease-in infinite 1.2s;
+}
+
+.floating-hearts .heart:nth-child(8) {
+  left: 80%;
+  animation: float-up 7.2s ease-in infinite 0.8s;
+}
+
+.floating-hearts .heart:nth-child(9) {
+  left: 90%;
+  animation: float-up 6.5s ease-in infinite 2.2s;
+}
+
+@media (max-width: 768px) {
+  .floating-hearts .heart {
+    font-size: 1.5rem !important;
+  }
+}
