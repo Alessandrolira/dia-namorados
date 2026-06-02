@@ -18,6 +18,27 @@ export const metadata: Metadata = {
   icons: {
     icon: "/vercel.svg",
   },
+  openGraph: {
+    title: "Dia dos Namorados ❤️",
+    description: "Celebre o amor e a paixão - Compartilhe sua história de amor!",
+    url: "https://dia-namorados-nine.vercel.app",
+    siteName: "Dia dos Namorados",
+    images: [
+      {
+        url: "/vercel.svg",
+        width: 1200,
+        height: 630,
+        alt: "Dia dos Namorados",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dia dos Namorados ❤️",
+    description: "Celebre o amor e a paixão",
+    images: ["/vercel.svg"],
+  },
 };
 
 export default function RootLayout({
