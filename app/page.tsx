@@ -215,12 +215,12 @@ export default function Home() {
                   placeholder="Comece contando como e quando você conheceu seu amor... Deixe sua criatividade fluir!"
                   value={formData.story}
                   onChange={handleStoryChange}
-                  maxLength={500}
+                  maxLength={2000}
                   required
                   className="w-full px-4 py-3 border-2 border-pink-200 rounded-lg focus:outline-none focus:border-pink-500 resize-none min-h-40 font-sans placeholder-gray-400 text-gray-900"
                 />
-                <div className={`text-right text-sm mt-2 ${charCount >= 500 ? 'text-red-500' : charCount >= 400 ? 'text-orange-500' : 'text-gray-600'}`}>
-                  {charCount}/500 caracteres
+                <div className={`text-right text-sm mt-2 ${charCount >= 2000 ? 'text-red-500' : charCount >= 1600 ? 'text-orange-500' : 'text-gray-600'}`}>
+                  {charCount}/2000 caracteres
                 </div>
               </div>
 
